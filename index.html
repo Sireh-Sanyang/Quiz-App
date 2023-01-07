@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <title>Quiz App</title>
+  </head>
+  <body>
+    <div class="home-box">
+      <h1>
+        How well do you know cats?<br/>
+        Take this quiz below to find out
+      </h1>
+      <input type="text" placeholder="Enter Username" id="userName" />
+      <h2><b>Instructions:</b></h2>
+      <p>Total number of questions: <span class="total-question">10</span></p>
+      <p>Your can play without creating a Username.</p>
+      <p>You can skip a question.</p>
+      <p>You can not go back to the previous question.</p>
+      <button type="button" class="btn" onclick="startQuiz()">
+        Start Quiz
+      </button>
+    </div>
+
+    <div class="game-box hide">
+      <div id="user"></div>
+      <div class="question-no"></div>
+      <div class="text"></div>
+      <div class="opt-box"></div>
+
+      <button type="button" class="btn">
+        <a href="quiz.html">Back</a>
+      </button>
+      <button type="button" class="btn" onclick="next()">Next</button>
+
+      <div class="ans-indicator"></div>
+    </div>
+
+    <div class="scoreContainer, hide">
+    </div>
 
     <script src="assets/js/script.js"></script>
-</body>
+  </body>
 </html>
