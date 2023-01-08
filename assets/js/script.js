@@ -73,14 +73,20 @@ const questions = [
     answer: 0,
   },
 ];
-
+let availableQuestions = [];
 // Get the username and display it 
 function getUserName() {
   let user = document.getElementById("userName").value;
   let userName = document.getElementById("user");
   userName.innerHTML = "Welcome " + user;
 }
-function setQuestions() {}
+// push the question into the avaible question
+function setQuestions() {
+    const totalQuestions = questions.length;
+	for(let i=0; i < totalQuestions; i++){
+		availableQuestions.push(questions[i])
+	}
+}
 function getNextQuestion() {}
 function getEffects() {}
 function getanswerIndicator() {}
