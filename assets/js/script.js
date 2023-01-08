@@ -73,7 +73,13 @@ const questions = [
     answer: 0,
   },
 ];
-function getUserName() {}
+
+// Get the username and display it 
+function getUserName() {
+  let user = document.getElementById("userName").value;
+  let userName = document.getElementById("user");
+  userName.innerHTML = "Welcome " + user;
+}
 function setQuestions() {}
 function getNextQuestion() {}
 function getEffects() {}
@@ -81,7 +87,7 @@ function getanswerIndicator() {}
 function updateAnswerIndicator() {}
 function startQuiz() {}
 function next() {}
-function scores(){}
+function scores() {}
 function quizOver() {}
 function resetGame() {}
 function goToHomebox() {}
