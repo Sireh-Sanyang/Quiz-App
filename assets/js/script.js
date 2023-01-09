@@ -73,7 +73,12 @@ const questions = [
     answer: 0,
   },
 ];
+
+
+const gameBox = document.getElementById('game-box')
+const homeBox = document.getElementById('home-box')
 let availableQuestions = [];
+
 // Get the username and display it 
 function getUserName() {
   let user = document.getElementById("userName").value;
@@ -87,12 +92,27 @@ function setQuestions() {
 		availableQuestions.push(questions[i])
 	}
 }
-function getNextQuestion() {}
+function getNextQuestion() {
+  
+}
+
+
 function getEffects() {}
 function getanswerIndicator() {}
 function updateAnswerIndicator() {}
-function startQuiz() {}
-function next() {}
+function startQuiz() {
+
+  homeBox.classList.add("hide");
+  gameBox.classList.remove("hide");
+  getUserName();
+  setQuestions();
+  getNextQuestion();
+  getanswerIndicator();
+
+}
+function next() {
+ 
+}
 function scores() {}
 function quizOver() {}
 function resetGame() {}
