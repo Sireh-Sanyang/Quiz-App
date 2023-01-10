@@ -6,7 +6,7 @@ const questions = [
   },
   {
     question: "What is a group of cats called?",
-    options: ["Fluffle", "Kennel", "Clowder"],
+    option: ["Fluffle", "Kennel", "Clowder"],
     answer: 2,
   },
   {
@@ -75,11 +75,18 @@ const questions = [
 ];
 
 
-const gameBox = document.getElementById('game-box')
-const homeBox = document.getElementById('home-box')
-let availableQuestions = [];
+const text = document.querySelector('.text');
+const questionNumber = document.querySelector('.question-no');
+const gameBox = document.getElementById("game-box");
+const homeBox = document.getElementById("home-box");
+const optBox = document.querySelector('.opt-box')
 
-// Get the username and display it 
+let options = [];
+let availableQuestions = [];
+let qcounter = 0;
+let runningQuestion;
+
+// Get the username and display it
 function getUserName() {
   let user = document.getElementById("userName").value;
   let userName = document.getElementById("user");
@@ -87,13 +94,50 @@ function getUserName() {
 }
 // push the question into the avaible question
 function setQuestions() {
-    const totalQuestions = questions.length;
-	for(let i=0; i < totalQuestions; i++){
-		availableQuestions.push(questions[i])
-	}
+  const totalQuestions = questions.length;
+  for (let i = 0; i < totalQuestions; i++) {
+    availableQuestions.push(questions[i]);
+  }
 }
 function getNextQuestion() {
-  
+ 
+  questionNumber.innerHTML = "Question:" + (qcounter+1) + " of 10";
+
+  // shuffle questions
+  const questionIndex = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
+  runningQuestion = questionIndex;
+  text.innerHTML = runningQuestion.question;
+
+  const index = availableQuestions.indexOf(questionIndex);
+  //Make sure the question doesn't repeat
+  availableQuestions.splice(index, 1);
+  const optionLen= runningQuestion.option.length;
+  //push options in availableOptions array
+  for(let i=0; i<optionLen; i++){
+    options.push(i)
+  }
+
+  optBox.innerHTML='';
+
+ for(let i=0;i<optionLen; i++){
+   //random option
+   const optionIndex = options[i];
+   //get the position of 'OptionIndex' from the availableOptions
+   const index1= options.indexOf(optionIndex);
+   //removes the 'optionIndex' from the availableOptions, so that option does not repeat
+ options.splice(index1,0);
+
+
+
+   const option1 = document.createElement("div");
+   option1.innerHTML=runningQuestion.option[optionIndex];
+   option1.id=optionIndex;
+ 
+   option1.className="opt";
+   optBox.appendChild(option1);
+   option1.setAttribute("onclick","getEffects(this)");
+ }
+  qcounter++
 }
 
 
@@ -101,18 +145,14 @@ function getEffects() {}
 function getanswerIndicator() {}
 function updateAnswerIndicator() {}
 function startQuiz() {
-
   homeBox.classList.add("hide");
   gameBox.classList.remove("hide");
   getUserName();
   setQuestions();
   getNextQuestion();
   getanswerIndicator();
-
 }
-function next() {
- 
-}
+function next() {}
 function scores() {}
 function quizOver() {}
 function resetGame() {}
