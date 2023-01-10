@@ -152,8 +152,11 @@ input{
 	background-color: green;
 }
 
- .ans-indicator div.wrong{
+.ans-indicator div.wrong{
 	background-color: red;
+}
+.opt.already-answered{
+	pointer-events: none;
 }
 a {
     text-decoration: none;

@@ -80,11 +80,14 @@ const questionNumber = document.querySelector('.question-no');
 const gameBox = document.getElementById("game-box");
 const homeBox = document.getElementById("home-box");
 const optBox = document.querySelector('.opt-box')
+const answerIndicatorContainer = document.querySelector(".ans-indicator");
+
 
 let options = [];
 let availableQuestions = [];
 let qcounter = 0;
 let runningQuestion;
+let correctAnswers = 0;
 
 // Get the username and display it
 function getUserName() {
@@ -140,10 +143,49 @@ function getNextQuestion() {
   qcounter++
 }
 
+// this block of code inside this function is not mine.
+function getEffects(element) {
+  const id = parseInt(element.id);
+	//fetch the answer by comparing the id of clicked option
+	if (id === runningQuestion.answer){
+		//set the green color to the correct option
+		element.classList.add("correct");
+		// add the indicator correct mark
+		updateAnswerIndicator("correct");
+		correctAnswers++;
+		console.log("correct:"+correctAnswers)
+	}
+	else{
+		//set the red color to the wrong option
+		element.classList.add("wrong");
+		// add the indicator wrong mark
+		updateAnswerIndicator("wrong");
 
-function getEffects() {}
-function getanswerIndicator() {}
-function updateAnswerIndicator() {}
+		// if the answer is incorrect, show the correct option
+		const optionLength = optBox.children.length;
+		for(let i=0; i<optionLength; i++){
+			if(parseInt(optBox.children[i].id) === runningQuestion.answer){
+				optBox.children[i].classList.add("correct");
+			}
+		}
+	}
+	unclickableOptions();
+}
+function unclickableOptions(){
+  const optionLen = optBox.children.length;
+	for(let i=0;i<optionLen; i++){
+		optBox.children[i].classList.add("already-answered");
+	}
+}
+function getanswerIndicator() {
+  for(let i=0; i<10; i++){
+		const indicator = document.createElement("div");
+		answerIndicatorContainer.appendChild(indicator);
+	}
+}
+function updateAnswerIndicator(mark) {
+  answerIndicatorContainer.children[qcounter-1].classList.add(mark)
+}
 function startQuiz() {
   homeBox.classList.add("hide");
   gameBox.classList.remove("hide");
