@@ -204,6 +204,17 @@ function next() {
 	}
 }
 function scores() {}
-function quizOver() {}
-function resetGame() {}
-function goToHomebox() {}
+function quizOver() {
+  const scoreBox = document.getElementsByClassName('scoreContainer')
+  gameBox.classList.add("hide");
+	scoreBox.classList.remove("hide");
+}
+function resetGame() {
+  qcounter=0;
+	correctAnswers = 0;
+}
+function goToHomebox() {
+  scoreBox.classList.add("hide");
+	homeBox.classList.remove("hide");
+	resetGame();
+}
