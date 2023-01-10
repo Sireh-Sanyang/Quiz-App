@@ -150,10 +150,18 @@ input{
 }
 .ans-indicator div.correct{
 	background-color: green;
+	background-image: url("../images/rightAns.png");
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .ans-indicator div.wrong{
 	background-color: red;
+	background-image: url("../images/wrongAns.png");
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 .opt.already-answered{
 	pointer-events: none;
