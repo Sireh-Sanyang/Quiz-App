@@ -194,7 +194,15 @@ function startQuiz() {
   getNextQuestion();
   getanswerIndicator();
 }
-function next() {}
+function next() {
+  if(qcounter===10){
+		console.log("Quiz Over!");
+		quizOver();
+	}
+	else{
+		getNextQuestion();
+	}
+}
 function scores() {}
 function quizOver() {}
 function resetGame() {}
