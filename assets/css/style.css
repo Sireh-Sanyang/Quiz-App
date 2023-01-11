@@ -124,7 +124,7 @@ input{
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-color: green;
+	background-color: #9fd883;
 	z-index: -1;  
 }
 
@@ -136,7 +136,7 @@ input{
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-color: red;
+	background-color: #f38357;
 	z-index: -1; 
 }
 .ans-indicator div{
@@ -149,7 +149,7 @@ input{
 	margin-top: 15px;
 }
 .ans-indicator div.correct{
-	background-color: green;
+	background-color: #9fd883;
 	background-image: url("../images/rightAns.png");
 	background-size: 50%;
 	background-repeat: no-repeat;
@@ -157,7 +157,7 @@ input{
 }
 
 .ans-indicator div.wrong{
-	background-color: red;
+	background-color: #f38357;
 	background-image: url("../images/wrongAns.png");
 	background-size: 50%;
 	background-repeat: no-repeat;
