@@ -5,6 +5,7 @@
 	outline: none;
 }
 body{
+	padding-top:5%;
 	margin: 0;
     background: url("../images/bg.jpg") no-repeat center center fixed;
     background-size: cover;
@@ -12,7 +13,7 @@ body{
     display: flex;
     font-family: 'Oswald', sans-serif;
     justify-content: center;
-   align-items: center; 
+    align-items: center; 
    
 }
 #home-box{
@@ -209,6 +210,7 @@ a {
 }
 @media (max-width: 330px){
 	#game-box,#home-box{
+		
 		width: 250px;	
 		font-size: 8px;
 	}
