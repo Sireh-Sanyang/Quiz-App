@@ -81,6 +81,7 @@ const gameBox = document.getElementById("game-box");
 const homeBox = document.getElementById("home-box");
 const optBox = document.querySelector('.opt-box')
 const answerIndicatorContainer = document.querySelector(".ans-indicator");
+const scoreContainer = document.getElementById("score-container");
 
 
 let options = [];
@@ -203,18 +204,23 @@ function next() {
 		getNextQuestion();
 	}
 }
-function scores() {}
+function scores() {
+  let user = document.getElementById("userName").value
+  let percent = (correctAnswers/10)*100;
+  scoreBox = document.getElementById("score-box");
+  scoreBox.innerHTML ="Thank you "+ (user)+"for playing the game. You got: " + (percent) + "%";
+}
 function quizOver() {
-  const scoreBox = document.getElementsByClassName('scoreContainer')
   gameBox.classList.add("hide");
-	scoreBox.classList.remove("hide");
+	scoreContainer.classList.remove("hide");
+  scores();
 }
 function resetGame() {
   qcounter=0;
 	correctAnswers = 0;
 }
 function goToHomebox() {
-  scoreBox.classList.add("hide");
+  scoreContainer.classList.add("hide");
 	homeBox.classList.remove("hide");
 	resetGame();
 }
