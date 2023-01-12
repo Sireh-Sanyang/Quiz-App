@@ -89,7 +89,7 @@ let availableQuestions = [];
 let qcounter = 0;
 let runningQuestion;
 let correctAnswers = 0;
-
+let timeTry = 0;
 // Get the username and display it
 function getUserName() {
   let user = document.getElementById("userName").value;
@@ -170,6 +170,7 @@ function getEffects(element) {
 			}
 		}
 	}
+  // timeTry++
 	unclickableOptions();
 }
 function unclickableOptions(){
@@ -215,12 +216,6 @@ function quizOver() {
 	scoreContainer.classList.remove("hide");
   scores();
 }
-function resetGame() {
-  qcounter=0;
-	correctAnswers = 0;
-}
-function goToHomebox() {
-  scoreContainer.classList.add("hide");
-	homeBox.classList.remove("hide");
-	resetGame();
-}
+
+
+
