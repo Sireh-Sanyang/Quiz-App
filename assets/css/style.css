@@ -187,3 +187,42 @@ a {
     height: 60%;
 	
 }
+@media (max-width: 530px){
+	body{
+		font-size: 10px;
+	}
+	#game-box,#home-box{
+		width: 300px;	
+	}
+	#home-box p{
+		font-weight: bold;
+		font-size: 15px;
+	}
+	.btn{
+		margin: 5px 10px;
+	}
+
+}
+@media (max-width: 330px){
+	#game-box,#home-box{
+		width: 250px;	
+		font-size: 8px;
+	}
+	.text{
+		font-size: 15px;
+		color: #000000;
+		padding: 15px 0;
+	}
+	.btn{
+		margin: 3px 15px;
+		padding: 10px;
+	}
+	.ans-indicator div{
+		height: 30px;
+		width: 30px;
+	}
+	.opt-box .opt{
+		padding: 10px;
+	}
+
+}
