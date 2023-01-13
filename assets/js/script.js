@@ -154,7 +154,7 @@ function getEffects(element) {
 		// add the indicator correct mark
 		updateAnswerIndicator("correct");
 		correctAnswers++;
-		console.log("correct:"+correctAnswers)
+
 	}
 	else{
 		//set the red color to the wrong option
@@ -189,16 +189,21 @@ function updateAnswerIndicator(mark) {
   answerIndicatorContainer.children[qcounter-1].classList.add(mark)
 }
 function startQuiz() {
+  let user = document.getElementById("userName").value;
+  if(user == 0){
+  }
+  else{
   homeBox.classList.add("hide");
   gameBox.classList.remove("hide");
   getUserName();
   setQuestions();
   getNextQuestion();
   getanswerIndicator();
+  }
 }
 function next() {
   if(qcounter===10){
-		console.log("Quiz Over!");
+
 		quizOver();
 	}
 	else{
@@ -209,7 +214,7 @@ function scores() {
   let user = document.getElementById("userName").value
   let percent = (correctAnswers/10)*100;
   scoreBox = document.getElementById("score-box");
-  scoreBox.innerHTML ="Thank you "+ (user)+"for playing the game. You got: " + (percent) + "%";
+  scoreBox.innerHTML ="Thank you "+ (user)+" for playing the game. You got: " + (percent) + "%";
 }
 function quizOver() {
   gameBox.classList.add("hide");
