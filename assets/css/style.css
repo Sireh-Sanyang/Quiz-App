@@ -11,7 +11,7 @@ body{
     background-size: cover;
 	font-size: 16px;
     display: flex;
-    font-family: 'Oswald', sans-serif;
+    font-family:'Roboto', sans-serif;
     justify-content: center;
     align-items: center; 
    
@@ -49,7 +49,7 @@ input{
 ::placeholder{
     font-size: larger;
     color:  #3a3a3a;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
 .btn{
@@ -79,7 +79,7 @@ input{
 }
  .question-no{
 	font-size:	20px;
-	border-bottom: 1px solid #cccccc;
+	border-bottom: 1px solid #3a3a3a;
 	padding-bottom:  10px;
 	line-height: 25px;
 	margin: 0;
