@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Quiz game for cat lovers"/>
+    <meta name="keywords" content="quiz, game, cats, lovers"/>
+
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <!-- google fonts -->
@@ -19,7 +22,7 @@
         How well do you know cats?<br/>
         Take this quiz below to find out
       </h1>
-      <input type="text" placeholder="Enter Username" id="userName" />
+      <input type="text" placeholder="Enter Username" id="userName"/>
       <h2><b>Instructions:</b></h2>
       <p>Total number of questions: 10</p>
       <p>Your can play without creating a Username.</p>
@@ -35,18 +38,16 @@
       <div class="question-no"></div>
       <div class="text"></div>
       <div class="opt-box"></div>
-
-      <button type="button" class="btn">
-        <a href="index.html">Back</a>
-      </button>
+        <a href="index.html" class="btn" >Back</a>
+    
       <button type="button" class="btn" onclick="next()">Next</button>
 
       <div class="ans-indicator"></div>
     </div>
 
-    <div id ="score-container" class="hide">
+    <div id="score-container" class="hide">
       <div id="score-box"></div>
-		  <button type="button" class="btn"><a href="index.html">Go to Home</a></button>
+        <a href="index.html" class="btn">Go to Home</a>
     </div>
 
     <script src="assets/js/script.js"></script>
